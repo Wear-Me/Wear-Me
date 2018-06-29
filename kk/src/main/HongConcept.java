@@ -71,7 +71,7 @@ public class HongConcept extends JFrame implements ActionListener {
 		panel.add(backBtn);
 		backBtn.setBorderPainted(false);
 		backBtn.setContentAreaFilled(false);
-		backBtn.addActionListener(this);
+
 
 		item1.setHorizontalAlignment(SwingConstants.CENTER);
 		item1.setBounds(200, 120, 100, 100);
