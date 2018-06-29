@@ -19,13 +19,7 @@ import javax.swing.JLabel;
 
 public class MainPage {
 	public static void main(String[] args) {
-		main.Main main = new Main();
-		main.getContentPane().setLayout(null);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setBounds(40, 350, 250, 100);
-		main.getContentPane().add(btnNewButton);
+		new Main();
 	}
 }
 
@@ -39,9 +33,8 @@ class Main extends JFrame implements ActionListener {
 		mFrame.setBounds(100, 100, 360, 625);
 
 		// mBtn.setIcon(arg0);
-		mBtn.setBounds(100, 100, 362, 625);
-		mBtn.setBorderPainted(false);
-		mBtn.setContentAreaFilled(false);
+		mBtn.setBounds(50, 400, 250, 100);
+
 
 		mPanel.setBackground(Color.WHITE);
 		mPanel.setLayout(null);
