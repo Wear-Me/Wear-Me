@@ -12,8 +12,10 @@ import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class SeasonSelection extends JFrame {
+public class SeasonSelection extends JFrame implements ActionListener{
 
 	JFrame seasonFrame = new JFrame();
 	private JPanel seasonPane; //계정을 고르기 위한 panel
@@ -21,7 +23,7 @@ public class SeasonSelection extends JFrame {
 	JButton btnSummer = new JButton("New button");
 	JButton btnWinter = new JButton("New button");
 	JLabel label = new JLabel("지금 계절은 뭐냐");
-
+	String path; //이미지 경로
 
 	public SeasonSelection() {
 		seasonFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,26 +34,29 @@ public class SeasonSelection extends JFrame {
 		
 		
 		//봄,가을 버튼 Photos/계절아이콘/봄가을아이콘.jpg	
-		btnSF.setIcon(new ImageIcon("kk/src/Photos/봄가을아이콘.jpg"));
-		btnSF.setBounds(35, 237, 95, 23);
+		btnSF.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/봄가을아이콘.jpg")));
+		btnSF.setBounds(50, 237, 95, 95);
 		seasonPane.add(btnSF);
 		btnSF.setBorderPainted(false);
 		btnSF.setContentAreaFilled(false);
+		btnSF.addActionListener(this);
 		
-		
+	
+		btnSummer.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/여름아이콘.jpg")));
 		//여름 버튼
-		btnSummer.setBounds(203, 237, 95, 23);
+		btnSummer.setBounds(203, 237, 100, 100);
 		seasonPane.add(btnSummer);
 		btnSummer.setBorderPainted(false);
 		btnSummer.setContentAreaFilled(false);
+		btnSummer.addActionListener(this);
 		
 		
 		//겨울 버튼
-		btnWinter.setBounds(130, 376, 95, 23);
+		btnWinter.setBounds(130, 376, 95, 95);
 		seasonPane.add(btnWinter);
 		btnWinter.setBorderPainted(false);
 		btnWinter.setContentAreaFilled(false);
-		
+		btnWinter.addActionListener(this);
 		
 		
 		//안내 문구
@@ -62,5 +67,24 @@ public class SeasonSelection extends JFrame {
 		
 		seasonFrame.getContentPane().add(seasonPane);
 		seasonFrame.setVisible(true);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		if (e.getSource() == btnSF) {
+			path="/Photos/SF";
+			seasonFrame.setVisible(false);
+			new ConceptSelection();
+		}
+		else if(e.getSource()==btnSummer) {
+			path="/Photos/Summer";
+			seasonFrame.setVisible(false);
+			new ConceptSelection();
+		}
+		else if(e.getSource()==btnWinter) {
+			path="/Photos/Winter";
+			seasonFrame.setVisible(false);
+			new ConceptSelection();
+		}
 	}
 }

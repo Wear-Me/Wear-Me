@@ -51,7 +51,7 @@ class Main extends JFrame implements ActionListener {
 		// TODO 자동 생성된 메소드 스텁
 		if (e.getSource() == mBtn) {
 			mFrame.setVisible(false);
-			new ConceptSelection();
+			new SeasonSelection();
 		}
 	}
 }
