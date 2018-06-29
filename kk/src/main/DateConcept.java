@@ -2,6 +2,8 @@ package main;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 
 import javax.swing.ImageIcon;
@@ -11,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class DateConcept extends JFrame {
+public class DateConcept extends JFrame implements ActionListener {
 	// 6~10
 	File[] list;
 	File path;
@@ -79,5 +81,11 @@ public class DateConcept extends JFrame {
 	void ImageSave() {
 		path = new File("./image//Style//");
 		list = path.listFiles();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO 자동 생성된 메소드 스텁
+		
 	}
 }

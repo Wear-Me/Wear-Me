@@ -12,6 +12,7 @@ import javax.swing.SwingConstants;
 
 public class BodyType extends JFrame implements ActionListener {
 	JFrame bodyFrame = new JFrame();
+	JFrame bodyFrame2 = new JFrame();
 	JPanel bodyPanel1 = new JPanel();
 	JPanel bodyPanel2 = new JPanel();
 
@@ -23,8 +24,8 @@ public class BodyType extends JFrame implements ActionListener {
 	JButton btnShort = new JButton("짧은사지");
 	JButton btnAvr2 = new JButton("니가 평균 사지라고 생각하면 눌러");
 
-	JLabel bodylabel1 = new JLabel("너의 사지길이는 어떻냐");
-	JLabel bodyLabel2 = new JLabel("너의 몸뚱아리는 어떻냐");
+	JLabel bodylabel1 = new JLabel("너의 몸뚱아리는 어떻냐");
+	JLabel bodyLabel2 = new JLabel("너의 사지길이는 어떻냐");
 
 	boolean thin = false;
 	boolean fat = false;
@@ -34,8 +35,15 @@ public class BodyType extends JFrame implements ActionListener {
 	public BodyType() {
 		bodyFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		bodyFrame.setBounds(100, 100, 362, 625);
+
+		bodyFrame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		bodyFrame2.setBounds(100, 100, 362, 625);
+
 		bodyPanel1.setBackground(Color.WHITE);
 		bodyPanel1.setLayout(null);
+		
+		bodyPanel2.setBackground(Color.WHITE);
+		bodyPanel2.setLayout(null);
 
 		// btnThin.setIcon(arg0);
 		btnThin.setBounds(45, 280, 95, 95);
@@ -74,19 +82,19 @@ public class BodyType extends JFrame implements ActionListener {
 		bodyFrame.setVisible(true);
 
 		// btnLong.setIcon(arg0);
-		btnLong.setBounds(221, 280, 95, 95);
+		btnLong.setBounds(45, 280, 95, 95);
 		bodyPanel2.add(btnLong);
 		btnLong.setBorderPainted(false);
 		btnLong.setContentAreaFilled(false);
 
 		// btnShort.setIcon(arg0);
-		btnShort.setBounds(45, 441, 95, 95);
+		btnShort.setBounds(221, 280, 95, 95);
 		bodyPanel2.add(btnShort);
 		btnShort.setBorderPainted(false);
 		btnShort.setContentAreaFilled(false);
 
 		// btnAvr2.setIcon(arg0);
-		btnAvr2.setBounds(250, 441, 95, 95);
+		btnAvr2.setBounds(130, 441, 95, 95);
 		bodyPanel2.add(btnAvr2);
 		btnAvr2.setBorderPainted(false);
 		btnAvr2.setContentAreaFilled(false);
@@ -98,6 +106,8 @@ public class BodyType extends JFrame implements ActionListener {
 		btnLong.addActionListener(this);
 		btnShort.addActionListener(this);
 		btnAvr2.addActionListener(this);
+		
+		bodyFrame2.add(bodyPanel2);
 	}
 
 	@Override
@@ -105,68 +115,63 @@ public class BodyType extends JFrame implements ActionListener {
 		// TODO 자동 생성된 메소드 스텁
 		if (e.getSource() == btnThin) {
 			thin = true;
-			bodyFrame.add(bodyPanel2);
+			bodyFrame.setVisible(false);
+			bodyFrame2.setVisible(true);
 		} else if (e.getSource() == btnFat) {
 			fat = true;
-			bodyFrame.add(bodyPanel2);
+			bodyFrame.setVisible(false);
+			bodyFrame2.setVisible(true);
 		} else if (e.getSource() == btnMuscle) {
 			muscle = true;
-			bodyFrame.add(bodyPanel2);
+			bodyFrame.setVisible(false);
+			bodyFrame2.setVisible(true);
 		} else if (e.getSource() == btnAvr1) {
 			avr = true;
-			bodyFrame.add(bodyPanel2);
+			bodyFrame.setVisible(false);
+			bodyFrame2.setVisible(true);
 		} else if (e.getSource() == btnLong) {
 			bodyFrame.setVisible(false);
-			if(thin==true) {
-				thin=false;
+			if (thin == true) {
+				thin = false;
 				new LongType(0);
-			}
-			else if(fat==true) {
-				fat=false;
+			} else if (fat == true) {
+				fat = false;
 				new LongType(1);
-			}
-			else if(muscle==true) {
-				muscle=false;
+			} else if (muscle == true) {
+				muscle = false;
 				new LongType(2);
-			}
-			else if(avr==true) {
-				avr=false;
+			} else if (avr == true) {
+				avr = false;
 				new LongType(3);
 			}
 		} else if (e.getSource() == btnShort) {
 			bodyFrame.setVisible(false);
-			if(thin==true) {
-				thin=false;
+			if (thin == true) {
+				thin = false;
 				new ShortType(0);
-			}
-			else if(fat==true) {
-				fat=false;
+			} else if (fat == true) {
+				fat = false;
 				new ShortType(1);
-			}
-			else if(muscle==true) {
-				muscle=false;
+			} else if (muscle == true) {
+				muscle = false;
 				new ShortType(2);
-			}
-			else if(avr==true) {
-				avr=false;
+			} else if (avr == true) {
+				avr = false;
 				new ShortType(3);
 			}
 		} else if (e.getSource() == btnAvr2) {
 			bodyFrame.setVisible(false);
-			if(thin==true) {
-				thin=false;
+			if (thin == true) {
+				thin = false;
 				new AvrType(0);
-			}
-			else if(fat==true) {
-				fat=false;
+			} else if (fat == true) {
+				fat = false;
 				new AvrType(1);
-			}
-			else if(muscle==true) {
-				muscle=false;
+			} else if (muscle == true) {
+				muscle = false;
 				new AvrType(2);
-			}
-			else if(avr==true) {
-				avr=false;
+			} else if (avr == true) {
+				avr = false;
 				new AvrType(3);
 			}
 		}

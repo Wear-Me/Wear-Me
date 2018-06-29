@@ -2,20 +2,27 @@ package main;
 
 import java.io.File;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 import java.util.*;
 
-public class AllConcept extends JFrame {
+public class AllConcept extends JFrame implements ActionListener {
 	// 0~5
 	File[] list;
 	File path;
-	public ImageIcon img1;
-	public ImageIcon img2;
-	public ImageIcon img3;
-	private JLabel lblNewLabel;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+
+	JLabel item1 = new JLabel("스윗한 핑크남");
+	JLabel item2 = new JLabel("캐주얼한 동갑남친");
+	JLabel item3 = new JLabel("활동적인 연하남");
+	JButton btn1;
+	JButton btn2;
+	JButton btn3;
+	JButton backBtn = new JButton();
+	JLabel label = new JLabel("전체");
+	JPanel panel = new JPanel();
+	JFrame frame = new JFrame();
 
 	public AllConcept() {
 		Render();
@@ -23,55 +30,88 @@ public class AllConcept extends JFrame {
 
 	public void Render() {
 		ImageSave();
+		btn1 = new JButton(new ImageIcon("./image//Style//" + list[0].getName()));
+		btn2 = new JButton(new ImageIcon("./image//Style//" + list[1].getName()));
+		btn3 = new JButton(new ImageIcon("./image//Style//" + list[2].getName()));
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setBounds(100, 100, 360, 625);
+		panel.setBackground(Color.WHITE);
+		panel.setLayout(null);
 
-		setSize(360, 652);
+		// btn1.setIcon(new
+		// ImageIcon(SeasonSelection.class.getResource("/Photos/봄가을아이콘.jpg")));
+		btn1.setBounds(20, 100, 130, 130);
+		panel.add(btn1);
+		btn1.setBorderPainted(false);
+		btn1.setContentAreaFilled(false);
 
-		this.img1 = new ImageIcon("./image//Style//" + list[0].getName());
-		this.img2 = new ImageIcon("./image//Style//" + list[1].getName());
-		this.img3 = new ImageIcon("./image//Style//" + list[2].getName());
+		// btn1.setIcon(new
+		// ImageIcon(SeasonSelection.class.getResource("/Photos/봄가을아이콘.jpg")));
+		btn2.setBounds(20, 270, 130, 130);
+		panel.add(btn2);
+		btn2.setBorderPainted(false);
+		btn2.setContentAreaFilled(false);
 
-		getContentPane().setLayout(null);
-		// 1~4
-		lblNewLabel = new JLabel(img1);// ����
-		lblNewLabel.setBounds(148, 15, 173, 157);
-		getContentPane().add(lblNewLabel);
+		// btn1.setIcon(new
+		// ImageIcon(SeasonSelection.class.getResource("/Photos/봄가을아이콘.jpg")));
+		btn3.setBounds(20, 440, 130, 130);
+		panel.add(btn3);
+		btn3.setBorderPainted(false);
+		btn3.setContentAreaFilled(false);
 
-		JLabel label = new JLabel(img2);// �߰�
-		label.setBounds(148, 199, 173, 157);
-		getContentPane().add(label);
-		String str;
-		JLabel label_1 = new JLabel(img3);// �Ʒ�
-		label_1.setBounds(148, 395, 173, 157);
-		getContentPane().add(label_1);
-		int idx = 0;
-		str = list[0].getName();
-		idx = str.lastIndexOf(".");
+		// btn1.setIcon(new
+		// ImageIcon(SeasonSelection.class.getResource("/Photos/봄가을아이콘.jpg")));
+		backBtn.setBounds(30, 50, 20, 40);
+		panel.add(backBtn);
+		// backBtn.setBorderPainted(false);
+		// backBtn.setContentAreaFilled(false);
 
-		textField = new JTextField(str);// ����
-		textField.setBounds(0, 105, 130, 27);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		item1.setHorizontalAlignment(SwingConstants.CENTER);
+		item1.setBounds(200, 120, 100, 100);
+		panel.add(item1);
 
-		str = list[1].getName();
-		idx = str.lastIndexOf(".");
+		item2.setHorizontalAlignment(SwingConstants.CENTER);
+		item2.setBounds(200, 290, 100, 100);
+		panel.add(item2);
 
-		textField_1 = new JTextField(str);// �߰�
-		textField_1.setColumns(10);
-		textField_1.setBounds(0, 223, 131, 27);
-		getContentPane().add(textField_1);
+		item3.setHorizontalAlignment(SwingConstants.CENTER);
+		item3.setBounds(200, 460, 100, 100);
+		panel.add(item3);
 
-		str = list[2].getName();
-		idx = str.lastIndexOf(".");
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setBounds(60, 50, 215, 32);
+		panel.add(label);
 
-		textField_2 = new JTextField(str);// �Ʒ�
-		textField_2.setColumns(10);
-		textField_2.setBounds(0, 329, 130, 27);
-		getContentPane().add(textField_2);
-		setVisible(true);
+		frame.getContentPane().add(panel);
+		frame.setVisible(true);
+
+		btn1.addActionListener(this);
+		btn2.addActionListener(this);
+		btn3.addActionListener(this);
+		backBtn.addActionListener(this);
 	}
 
 	void ImageSave() {
 		path = new File("./image//Style//");
 		list = path.listFiles();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO 자동 생성된 메소드 스텁
+		if (e.getSource() == btn1) {
+			frame.setVisible(false);
+			new BodyType();
+		} else if (e.getSource() == btn2) {
+			frame.setVisible(false);
+			new BodyType();
+		} else if (e.getSource() == btn3) {
+			frame.setVisible(false);
+			new BodyType();
+		} else if (e.getSource() == backBtn) {
+			frame.setVisible(false);
+			new ConceptSelection();
+		}
+
 	}
 }
