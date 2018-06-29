@@ -2,7 +2,13 @@ import java.io.File;
 import java.awt.*;
 import javax.swing.*;
 import java.util.*;
+import java.io.File;
+import java.awt.*;
+import javax.swing.*;
+import java.util.*;
+
 public class wear_class extends JFrame {
+	//0~5
 	File []list;
 	File path;
 	public ImageIcon img1;
@@ -12,13 +18,11 @@ public class wear_class extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	public static void main(String[] args) {
-		wear_class f = new wear_class();
-			
-	}
+	wear_class1 f;
 
 
 	public wear_class() {
+		f= new wear_class1();
 		Render();
 	}
 	public void Render()
@@ -31,11 +35,11 @@ public class wear_class extends JFrame {
 		this.img1 = new ImageIcon("./image//Style//"+list[0].getName());
 		this.img2 = new ImageIcon("./image//Style//"+list[1].getName());
 		this.img3 = new ImageIcon("./image//Style//"+list[2].getName());
-		
+			
 		
 		
 		getContentPane().setLayout(null);
-
+		//1~4
 		lblNewLabel = new JLabel(img1);//¸ÇÀ§
 		lblNewLabel.setBounds(148,15, 173, 157);
 		getContentPane().add(lblNewLabel);
