@@ -22,10 +22,8 @@ public class HackConcept extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	HackConcept f;
 
 	public HackConcept() {
-		f = new HackConcept();
 		Render();
 	}
 

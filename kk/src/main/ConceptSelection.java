@@ -20,6 +20,7 @@ public class ConceptSelection extends JFrame implements ActionListener {
 	JButton btnGangnam = new JButton("강남");
 	JButton btnHack = new JButton("해커톤");
 	JButton btnInterv = new JButton("인터뷰");
+	JButton backBtn = new JButton("");
 	JLabel label = new JLabel("원하는 스타일을 선택해봐");
 
 	public ConceptSelection() {
@@ -81,6 +82,10 @@ public class ConceptSelection extends JFrame implements ActionListener {
 		conceptFrame.getContentPane().add(conceptPane);
 		conceptFrame.setVisible(true);
 
+		backBtn.setBounds(30, 50, 20, 40);
+		backBtn.addActionListener(this);
+		conceptPane.add(backBtn);
+
 		btnAll.addActionListener(this);
 		btnDate.addActionListener(this);
 		btnHongik.addActionListener(this);
@@ -93,17 +98,26 @@ public class ConceptSelection extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO 자동 생성된 메소드 스텁
 		if (e.getSource() == btnAll) {
-
+			conceptFrame.setVisible(false);
+			new AllConcept();
 		} else if (e.getSource() == btnDate) {
-
+			conceptFrame.setVisible(false);
+			new DateConcept();
 		} else if (e.getSource() == btnHongik) {
-
+			conceptFrame.setVisible(false);
+			new HongConcept();
 		} else if (e.getSource() == btnGangnam) {
-
+			conceptFrame.setVisible(false);
+			new GangConcept();
 		} else if (e.getSource() == btnHack) {
-
+			conceptFrame.setVisible(false);
+			new HackConcept();
 		} else if (e.getSource() == btnInterv) {
-
+			conceptFrame.setVisible(false);
+			new InterConcept();
+		} else if (e.getSource() == backBtn) {
+			conceptFrame.setVisible(false);
+			new SeasonSelection();
 		}
 	}
 }

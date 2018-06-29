@@ -22,10 +22,8 @@ public class InterConcept extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	InterConcept f;
 
 	public InterConcept() {
-		f = new InterConcept();
 		Render();
 	}
 

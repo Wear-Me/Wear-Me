@@ -22,10 +22,8 @@ public class GangConcept extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	GangConcept f;
 
 	public GangConcept() {
-		f = new GangConcept();
 		Render();
 	}
 

@@ -6,8 +6,8 @@ import javax.swing.*;
 import java.util.*;
 
 public class AllConcept extends JFrame {
-	//0~5
-	File []list;
+	// 0~5
+	File[] list;
 	File path;
 	public ImageIcon img1;
 	public ImageIcon img2;
@@ -16,66 +16,62 @@ public class AllConcept extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	//AllConcept f= new AllConcept();
 
 	public AllConcept() {
 		Render();
 	}
-	public void Render()
-	{
+
+	public void Render() {
 		ImageSave();
-		
-		setSize(360,652);
-		
-		
-		this.img1 = new ImageIcon("./image//Style//"+list[0].getName());
-		this.img2 = new ImageIcon("./image//Style//"+list[1].getName());
-		this.img3 = new ImageIcon("./image//Style//"+list[2].getName());
-			
-		
-		
+
+		setSize(360, 652);
+
+		this.img1 = new ImageIcon("./image//Style//" + list[0].getName());
+		this.img2 = new ImageIcon("./image//Style//" + list[1].getName());
+		this.img3 = new ImageIcon("./image//Style//" + list[2].getName());
+
 		getContentPane().setLayout(null);
-		//1~4
-		lblNewLabel = new JLabel(img1);//����
-		lblNewLabel.setBounds(148,15, 173, 157);
+		// 1~4
+		lblNewLabel = new JLabel(img1);// ����
+		lblNewLabel.setBounds(148, 15, 173, 157);
 		getContentPane().add(lblNewLabel);
-		
-		JLabel label = new JLabel(img2);//�߰�
+
+		JLabel label = new JLabel(img2);// �߰�
 		label.setBounds(148, 199, 173, 157);
 		getContentPane().add(label);
 		String str;
-		JLabel label_1 = new JLabel(img3);//�Ʒ�
+		JLabel label_1 = new JLabel(img3);// �Ʒ�
 		label_1.setBounds(148, 395, 173, 157);
 		getContentPane().add(label_1);
-		int idx =0;
-		str =  list[0].getName();
-		idx =  str.lastIndexOf(".");
+		int idx = 0;
+		str = list[0].getName();
+		idx = str.lastIndexOf(".");
 
-		textField = new JTextField(str);//����
+		textField = new JTextField(str);// ����
 		textField.setBounds(0, 105, 130, 27);
 		getContentPane().add(textField);
 		textField.setColumns(10);
 
-		str =  list[1].getName();
-		idx =  str.lastIndexOf(".");
-		
-		textField_1 = new JTextField(str);//�߰�
+		str = list[1].getName();
+		idx = str.lastIndexOf(".");
+
+		textField_1 = new JTextField(str);// �߰�
 		textField_1.setColumns(10);
 		textField_1.setBounds(0, 223, 131, 27);
 		getContentPane().add(textField_1);
-		
-		str =  list[2].getName();
-		idx =  str.lastIndexOf(".");
 
-		textField_2 = new JTextField(str);//�Ʒ�
+		str = list[2].getName();
+		idx = str.lastIndexOf(".");
+
+		textField_2 = new JTextField(str);// �Ʒ�
 		textField_2.setColumns(10);
 		textField_2.setBounds(0, 329, 130, 27);
 		getContentPane().add(textField_2);
-		setVisible(true);	
+		setVisible(true);
 	}
-	void ImageSave()
-	{
-		 path = new File("./image//Style//");
-		 list = path.listFiles();	
+
+	void ImageSave() {
+		path = new File("./image//Style//");
+		list = path.listFiles();
 	}
 }

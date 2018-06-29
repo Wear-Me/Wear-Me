@@ -22,10 +22,8 @@ public class HongConcept extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	HongConcept f;
 
 	public HongConcept() {
-		f = new HongConcept();
 		Render();
 	}
 

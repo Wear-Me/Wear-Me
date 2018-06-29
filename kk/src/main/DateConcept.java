@@ -22,10 +22,8 @@ public class DateConcept extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	DateConcept f;
 
 	public DateConcept() {
-		f = new DateConcept();
 		Render();
 	}
 
