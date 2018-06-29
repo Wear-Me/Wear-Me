@@ -1,9 +1,11 @@
 package main;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,14 +18,15 @@ public class BodyType extends JFrame implements ActionListener {
 	JPanel bodyPanel1 = new JPanel();
 	JPanel bodyPanel2 = new JPanel();
 
-	JButton btnThin = new JButton("멸치");
-	JButton btnFat = new JButton("뚱뚱");
-	JButton btnMuscle = new JButton("근육");
-	JButton btnAvr1 = new JButton("니가 평균 몸매라고 생각하면 눌러");
-	JButton btnLong = new JButton("긴사지");
-	JButton btnShort = new JButton("짧은사지");
-	JButton btnAvr2 = new JButton("니가 평균 사지라고 생각하면 눌러");
+	JButton btnThin = new JButton("");
+	JButton btnFat = new JButton("");
+	JButton btnMuscle = new JButton("");
+	JButton btnAvr1 = new JButton("");
+	JButton btnLong = new JButton("");
+	JButton btnShort = new JButton("");
+	JButton btnAvr2 = new JButton("");
 	JButton backBtn = new JButton("");
+	JButton backBtn2 = new JButton("");
 
 	JLabel bodylabel1 = new JLabel("너의 몸뚱아리는 어떻냐");
 	JLabel bodyLabel2 = new JLabel("너의 사지길이는 어떻냐");
@@ -46,32 +49,39 @@ public class BodyType extends JFrame implements ActionListener {
 		bodyPanel2.setBackground(Color.WHITE);
 		bodyPanel2.setLayout(null);
 
-		// btnThin.setIcon(arg0);
-		btnThin.setBounds(45, 280, 95, 95);
+		
+		//멸치 버튼
+		btnThin.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/thin.jpg")));
+		btnThin.setBounds(33, 181, 135, 135);
 		bodyPanel1.add(btnThin);
 		btnThin.setBorderPainted(false);
 		btnThin.setContentAreaFilled(false);
 
-		// btnFat.setIcon(arg0);
-		btnFat.setBounds(221, 280, 95, 95);
+		//뚱뚱 버튼
+		btnFat.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/fat.jpg")));
+		btnFat.setBounds(180, 181,  135, 135);
 		bodyPanel1.add(btnFat);
 		btnFat.setBorderPainted(false);
 		btnFat.setContentAreaFilled(false);
 
-		// btnMuscle.setIcon(arg0);
-		btnMuscle.setBounds(45, 441, 95, 95);
+		//근육 버튼
+		btnMuscle.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/muscle.jpg")));
+		btnMuscle.setBounds(33, 327,  135, 135);
 		bodyPanel1.add(btnMuscle);
 		btnMuscle.setBorderPainted(false);
 		btnMuscle.setContentAreaFilled(false);
 
-		// btnAvr1.setIcon(arg0);
-		btnAvr1.setBounds(221, 441, 95, 95);
+		//평균몸 버튼
+		btnAvr1.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/avgW.jpg")));
+		btnAvr1.setBounds(180, 327, 135, 135);
 		bodyPanel1.add(btnAvr1);
 		btnAvr1.setBorderPainted(false);
 		btnAvr1.setContentAreaFilled(false);
-
+		
+		
+		bodylabel1.setFont(new Font("Rix장미의유혹Basic Regular", Font.ITALIC, 25));
 		bodylabel1.setHorizontalAlignment(SwingConstants.CENTER);
-		bodylabel1.setBounds(60, 50, 215, 32);
+		bodylabel1.setBounds(45, 40, 274, 32);
 		bodyPanel1.add(bodylabel1);
 
 		btnThin.addActionListener(this);
@@ -79,40 +89,59 @@ public class BodyType extends JFrame implements ActionListener {
 		btnMuscle.addActionListener(this);
 		btnAvr1.addActionListener(this);
 
-		backBtn.setBounds(30, 50, 20, 40);
+		
+		//뒤로가기
+		backBtn.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/Back.png")));
+		backBtn.setBounds(12, 29, 30, 50);
+		backBtn.setBorderPainted(false);
+		backBtn.setContentAreaFilled(false);
 		backBtn.addActionListener(this);
 		bodyPanel1.add(backBtn);
 
-		bodyFrame.add(bodyPanel1);
+		bodyFrame.getContentPane().add(bodyPanel1);
 		bodyFrame.setVisible(true);
 
-		// btnLong.setIcon(arg0);
-		btnLong.setBounds(45, 280, 95, 95);
+		
+		// longbtn
+		btnLong.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/long.jpg")));
+		btnLong.setBounds(33, 181, 135, 135);
 		bodyPanel2.add(btnLong);
 		btnLong.setBorderPainted(false);
 		btnLong.setContentAreaFilled(false);
 
-		// btnShort.setIcon(arg0);
-		btnShort.setBounds(221, 280, 95, 95);
+		
+		//shortbtn
+		btnShort.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/short.jpg")));
+		btnShort.setBounds(180, 181, 135, 135);
 		bodyPanel2.add(btnShort);
 		btnShort.setBorderPainted(false);
 		btnShort.setContentAreaFilled(false);
 
-		// btnAvr2.setIcon(arg0);
-		btnAvr2.setBounds(130, 441, 95, 95);
+		
+		//평균키
+		btnAvr2.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/avgT.jpg")));
+		btnAvr2.setBounds(106, 327, 135, 135);
 		bodyPanel2.add(btnAvr2);
 		btnAvr2.setBorderPainted(false);
 		btnAvr2.setContentAreaFilled(false);
 
 		bodyLabel2.setHorizontalAlignment(SwingConstants.CENTER);
-		bodyLabel2.setBounds(60, 50, 215, 32);
+		bodyLabel2.setFont(new Font("Rix장미의유혹Basic Regular", Font.ITALIC, 25));
+		bodyLabel2.setBounds(45, 40, 274, 32);
 		bodyPanel2.add(bodyLabel2);
-
+		
 		btnLong.addActionListener(this);
 		btnShort.addActionListener(this);
 		btnAvr2.addActionListener(this);
 
-		bodyFrame2.add(bodyPanel2);
+		backBtn2.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/Back.png")));
+		backBtn2.setBounds(12, 29, 30, 50);
+		backBtn2.setBorderPainted(false);
+		backBtn2.setContentAreaFilled(false);
+		backBtn2.addActionListener(this);
+		bodyPanel2.add(backBtn2);
+		
+		bodyFrame2.getContentPane().add(bodyPanel2);
 	}
 
 	@Override
@@ -182,6 +211,9 @@ public class BodyType extends JFrame implements ActionListener {
 				avr = false;
 				new AvrType(3);
 			}
+		} else if(e.getSource() == backBtn2) {
+			bodyFrame2.setVisible(false);
+			new BodyType();
 		}
 	}
 }
