@@ -23,6 +23,7 @@ public class BodyType extends JFrame implements ActionListener {
 	JButton btnLong = new JButton("긴사지");
 	JButton btnShort = new JButton("짧은사지");
 	JButton btnAvr2 = new JButton("니가 평균 사지라고 생각하면 눌러");
+	JButton backBtn = new JButton("");
 
 	JLabel bodylabel1 = new JLabel("너의 몸뚱아리는 어떻냐");
 	JLabel bodyLabel2 = new JLabel("너의 사지길이는 어떻냐");
@@ -41,7 +42,7 @@ public class BodyType extends JFrame implements ActionListener {
 
 		bodyPanel1.setBackground(Color.WHITE);
 		bodyPanel1.setLayout(null);
-		
+
 		bodyPanel2.setBackground(Color.WHITE);
 		bodyPanel2.setLayout(null);
 
@@ -78,6 +79,10 @@ public class BodyType extends JFrame implements ActionListener {
 		btnMuscle.addActionListener(this);
 		btnAvr1.addActionListener(this);
 
+		backBtn.setBounds(30, 50, 20, 40);
+		backBtn.addActionListener(this);
+		bodyPanel1.add(backBtn);
+
 		bodyFrame.add(bodyPanel1);
 		bodyFrame.setVisible(true);
 
@@ -106,7 +111,7 @@ public class BodyType extends JFrame implements ActionListener {
 		btnLong.addActionListener(this);
 		btnShort.addActionListener(this);
 		btnAvr2.addActionListener(this);
-		
+
 		bodyFrame2.add(bodyPanel2);
 	}
 
@@ -129,8 +134,11 @@ public class BodyType extends JFrame implements ActionListener {
 			avr = true;
 			bodyFrame.setVisible(false);
 			bodyFrame2.setVisible(true);
-		} else if (e.getSource() == btnLong) {
+		} else if (e.getSource() == backBtn) {
 			bodyFrame.setVisible(false);
+			new ConceptSelection();
+		} else if (e.getSource() == btnLong) {
+			bodyFrame2.setVisible(false);
 			if (thin == true) {
 				thin = false;
 				new LongType(0);
@@ -145,7 +153,7 @@ public class BodyType extends JFrame implements ActionListener {
 				new LongType(3);
 			}
 		} else if (e.getSource() == btnShort) {
-			bodyFrame.setVisible(false);
+			bodyFrame2.setVisible(false);
 			if (thin == true) {
 				thin = false;
 				new ShortType(0);
@@ -160,7 +168,7 @@ public class BodyType extends JFrame implements ActionListener {
 				new ShortType(3);
 			}
 		} else if (e.getSource() == btnAvr2) {
-			bodyFrame.setVisible(false);
+			bodyFrame2.setVisible(false);
 			if (thin == true) {
 				thin = false;
 				new AvrType(0);
