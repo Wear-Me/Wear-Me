@@ -85,7 +85,7 @@ public class ConceptSelection extends JFrame implements ActionListener {
 		conceptFrame.setVisible(true);
 
 		backBtn.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/Back.png")));
-		backBtn.setBounds(30, 50, 20, 40);
+		backBtn.setBounds(20, 50, 30, 40);
 		conceptPane.add(backBtn);
 		backBtn.setBorderPainted(false);
 		backBtn.setContentAreaFilled(false);

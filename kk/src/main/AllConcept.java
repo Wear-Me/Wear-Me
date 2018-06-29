@@ -59,12 +59,12 @@ public class AllConcept extends JFrame implements ActionListener {
 		btn3.setBorderPainted(false);
 		btn3.setContentAreaFilled(false);
 
-		// btn1.setIcon(new
-		// ImageIcon(SeasonSelection.class.getResource("/Photos/봄가을아이콘.jpg")));
-		backBtn.setBounds(30, 50, 20, 40);
+		backBtn.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/Back.png")));
+		backBtn.setBounds(20, 50, 30, 40);
 		panel.add(backBtn);
-		// backBtn.setBorderPainted(false);
-		// backBtn.setContentAreaFilled(false);
+		backBtn.setBorderPainted(false);
+		backBtn.setContentAreaFilled(false);
+		backBtn.addActionListener(this);
 
 		item1.setHorizontalAlignment(SwingConstants.CENTER);
 		item1.setBounds(200, 120, 100, 100);
