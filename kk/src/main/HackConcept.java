@@ -44,9 +44,9 @@ public class HackConcept extends JFrame implements ActionListener {
 	public void Render() {
 		ImageSave();
 
-		btn1 = new JButton(new ImageIcon("./image//Style//" + list[0].getName()));
-		btn2 = new JButton(new ImageIcon("./image//Style//" + list[1].getName()));
-		btn3 = new JButton(new ImageIcon("./image//Style//" + list[2].getName()));
+		btn1 = new JButton(new ImageIcon("./image//Style//" + list[5].getName()));
+		btn2 = new JButton(new ImageIcon("./image//Style//" + list[6].getName()));
+		btn3 = new JButton(new ImageIcon("./image//Style//" + list[7].getName()));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(100, 100, 360, 625);
 		panel.setBackground(Color.WHITE);

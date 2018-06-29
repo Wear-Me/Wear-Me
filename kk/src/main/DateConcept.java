@@ -43,9 +43,9 @@ public class DateConcept extends JFrame implements ActionListener {
 	public void Render() {
 		ImageSave();
 		
-		btn1 = new JButton(new ImageIcon("./image//Style//" + list[6].getName()));
-		btn2 = new JButton(new ImageIcon("./image//Style//" + list[7].getName()));
-		btn3 = new JButton(new ImageIcon("./image//Style//" + list[8].getName()));
+		btn1 = new JButton(new ImageIcon("./image//Style//" + list[21].getName()));
+		btn2 = new JButton(new ImageIcon("./image//Style//" + list[22].getName()));
+		btn3 = new JButton(new ImageIcon("./image//Style//" + list[23].getName()));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(100, 100, 360, 625);
 		panel.setBackground(Color.WHITE);
