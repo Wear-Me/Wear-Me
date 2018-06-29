@@ -18,7 +18,7 @@ public class LongType extends JPanel implements ActionListener {
 	JButton upBtn = new JButton("상의");
 	JButton downBtn = new JButton("하의");
 	JButton outBtn = new JButton("아우터");
-	JButton otherBtn = new JButton("다른 옷 추가");
+	JButton otherBtn = new JButton("배경");
 	JButton backBtn = new JButton();
 	Image fatImage = new ImageIcon("./src/image/cloud.jpg").getImage();
 	Image thinImage = new ImageIcon("./src/image/cloud.jpg").getImage();
