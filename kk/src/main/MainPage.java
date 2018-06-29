@@ -1,56 +1,65 @@
 package main;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
+import java.awt.Dimension;
+import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+import javax.swing.JScrollPane;
 import javax.swing.JButton;
-import javax.swing.JTextField;
-import java.awt.Color;
-import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JTextPane;
-import javax.swing.JTextArea;
-import javax.swing.JLabel;
 
 public class MainPage {
 	public static void main(String[] args) {
-		new Main();
+		
+		main.Main main = new Main();
+		
+		main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		main.setBounds(100, 100, 360, 625);
+		main.setVisible(true);
 	}
 }
 
 class Main extends JFrame implements ActionListener {
-	JFrame mFrame = new JFrame();
-	JPanel mPanel = new JPanel();
+	JScrollPane scrollPane;
+	ImageIcon icon;
 	JButton mBtn = new JButton("");
 
 	public Main() {
-		mFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		mFrame.setBounds(100, 100, 360, 625);
-
-		// mBtn.setIcon(arg0);
-		mBtn.setBounds(50, 400, 250, 100);
-
-
-		mPanel.setBackground(Color.WHITE);
-		mPanel.setLayout(null);
-		mPanel.add(mBtn);
-
-		mFrame.add(mPanel);
-		mFrame.setVisible(true);
-
-		mBtn.addActionListener(this);
+	    icon = new ImageIcon(MainPage.class.getResource("/Photos/mainBackG.jpg"));
+	    
+	    //배경 Panel 생성후 컨텐츠페인으로 지정      
+        JPanel background = new JPanel() {
+            public void paintComponent(Graphics g) {
+                Dimension d = getSize();
+                g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
+                // Approach 3: Fix the image position in the scroll pane
+                // Point p = scrollPane.getViewport().getViewPosition();
+                // g.drawImage(icon.getImage(), p.x, p.y, null);
+                setOpaque(false); //그림을 표시하게 설정,투명하게 조절
+                super.paintComponent(g);
+            }
+        };
+        
+        background.setLayout(null);
+        mBtn.setBorderPainted(false);
+		mBtn.setContentAreaFilled(false);
+        mBtn.setIcon(new ImageIcon(MainPage.class.getResource("/Photos/mainBtn.png")));
+        mBtn.setBounds(50, 350, 250, 250);
+        mBtn.addActionListener(this);
+        background.add(mBtn);
+        
+        scrollPane = new JScrollPane(background);
+        setContentPane(scrollPane);
+		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO 자동 생성된 메소드 스텁
 		if (e.getSource() == mBtn) {
-			mFrame.setVisible(false);
+			setVisible(false);
 			new SeasonSelection();
 		}
 	}
