@@ -24,7 +24,7 @@ public class ConceptSelection extends JFrame implements ActionListener {
 
 	public ConceptSelection() {
 		conceptFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		conceptFrame.setBounds(100, 100, 362, 625);
+		conceptFrame.setBounds(100, 100, 360, 625);
 		conceptPane = new JPanel();
 		conceptPane.setBackground(Color.WHITE);
 		conceptPane.setLayout(null);
@@ -78,7 +78,7 @@ public class ConceptSelection extends JFrame implements ActionListener {
 		label.setBounds(60, 50, 215, 32);
 		conceptPane.add(label);
 
-		conceptFrame.add(conceptPane);
+		conceptFrame.getContentPane().add(conceptPane);
 		conceptFrame.setVisible(true);
 
 		btnAll.addActionListener(this);
