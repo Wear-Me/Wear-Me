@@ -1,10 +1,12 @@
 package main;
 
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.UIManager;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
@@ -25,8 +27,21 @@ class Main extends JFrame implements ActionListener {
 	JScrollPane scrollPane;
 	ImageIcon icon;
 	JButton mBtn = new JButton("");
+	
+	//폰트 전역 지정 함수
+	public void setUIFont(javax.swing.plaf.FontUIResource f) {
+		java.util.Enumeration keys = UIManager.getDefaults().keys();
+		while (keys.hasMoreElements()) {
+			Object key = keys.nextElement();
+			Object value = UIManager.get(key);
+			if (value instanceof javax.swing.plaf.FontUIResource)
+				UIManager.put(key, f);
+		}
+	}
 
 	public Main() {
+		setUIFont (new javax.swing.plaf.FontUIResource("Rix장미의유혹Basic Regular", Font.PLAIN, 12));
+		
 	    icon = new ImageIcon(MainPage.class.getResource("/Photos/mainBackG.jpg"));
 	    
 	    //배경 Panel 생성후 컨텐츠페인으로 지정      
