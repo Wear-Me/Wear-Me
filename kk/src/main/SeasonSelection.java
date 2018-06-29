@@ -14,15 +14,16 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Image;
 
 public class SeasonSelection extends JFrame implements ActionListener {
 
 	JFrame seasonFrame = new JFrame();
 	private JPanel seasonPane; // 계정을 고르기 위한 panel
-	JButton btnSF = new JButton("New button");
-	JButton btnSummer = new JButton("New button");
-	JButton btnWinter = new JButton("New button");
-	JButton backBtn = new JButton("");
+	JButton btnSF = new JButton("");
+	JButton btnSummer = new JButton("");
+	JButton btnWinter = new JButton("");
 	JLabel label = new JLabel("지금 계절은 뭐냐");
 	String path; // 이미지 경로
 
@@ -33,37 +34,36 @@ public class SeasonSelection extends JFrame implements ActionListener {
 		seasonPane.setBackground(Color.WHITE);
 		seasonPane.setLayout(null);
 
-		// 봄,가을 버튼 Photos/계절아이콘/봄가을아이콘.jpg
-		btnSF.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/봄가을아이콘.jpg")));
-		btnSF.setBounds(50, 237, 95, 95);
+		// 봄,가을 버튼
+		btnSF.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/SF.jpg")));
+		btnSF.setBounds(12, 223, 158, 150);
 		seasonPane.add(btnSF);
 		btnSF.setBorderPainted(false);
 		btnSF.setContentAreaFilled(false);
 		btnSF.addActionListener(this);
 
-		btnSummer.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/여름아이콘.jpg")));
 		// 여름 버튼
-		btnSummer.setBounds(203, 237, 100, 100);
+		btnSummer.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/Smmer.jpg")));
+		btnSummer.setBounds(167, 223, 177, 150);
 		seasonPane.add(btnSummer);
 		btnSummer.setBorderPainted(false);
 		btnSummer.setContentAreaFilled(false);
 		btnSummer.addActionListener(this);
 
 		// 겨울 버튼
-		btnWinter.setBounds(130, 376, 95, 95);
+		btnWinter.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/Winter.jpg")));
+		btnWinter.setBounds(93, 375, 160, 150);
 		seasonPane.add(btnWinter);
 		btnWinter.setBorderPainted(false);
 		btnWinter.setContentAreaFilled(false);
 		btnWinter.addActionListener(this);
-
+		
+		
 		// 안내 문구
+		label.setFont(new Font("Rix장미의유혹Basic Regular", Font.ITALIC, 30));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setBounds(60, 50, 215, 32);
+		label.setBounds(50, 126, 240, 46);
 		seasonPane.add(label);
-
-		backBtn.setBounds(30, 50, 20, 40);
-		backBtn.addActionListener(this);
-		seasonPane.add(backBtn);
 
 		seasonFrame.getContentPane().add(seasonPane);
 		seasonFrame.setVisible(true);
@@ -84,9 +84,6 @@ public class SeasonSelection extends JFrame implements ActionListener {
 			path = "/Photos/Winter";
 			seasonFrame.setVisible(false);
 			new ConceptSelection();
-		} else if (e.getSource() == backBtn) {
-			seasonFrame.setVisible(false);
-			new Main();
-		}
+		} 
 	}
 }
