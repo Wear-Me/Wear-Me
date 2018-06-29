@@ -86,7 +86,7 @@ public class BodyType extends JFrame implements ActionListener {
 		btnShort.setContentAreaFilled(false);
 
 		// btnAvr2.setIcon(arg0);
-		btnAvr2.setBounds(221, 441, 95, 95);
+		btnAvr2.setBounds(250, 441, 95, 95);
 		bodyPanel2.add(btnAvr2);
 		btnAvr2.setBorderPainted(false);
 		btnAvr2.setContentAreaFilled(false);
@@ -119,55 +119,55 @@ public class BodyType extends JFrame implements ActionListener {
 			bodyFrame.setVisible(false);
 			if(thin==true) {
 				thin=false;
-				//new BodyImage(0);
+				new LongType(0);
 			}
 			else if(fat==true) {
 				fat=false;
-				//new BodyImage(1);
+				new LongType(1);
 			}
 			else if(muscle==true) {
 				muscle=false;
-				//new BodyImage(2);
+				new LongType(2);
 			}
 			else if(avr==true) {
 				avr=false;
-				//new BodyImage(3);
+				new LongType(3);
 			}
 		} else if (e.getSource() == btnShort) {
 			bodyFrame.setVisible(false);
 			if(thin==true) {
 				thin=false;
-				//new BodyImage(0);
+				new ShortType(0);
 			}
 			else if(fat==true) {
 				fat=false;
-				//new BodyImage(1);
+				new ShortType(1);
 			}
 			else if(muscle==true) {
 				muscle=false;
-				//new BodyImage(2);
+				new ShortType(2);
 			}
 			else if(avr==true) {
 				avr=false;
-				//new BodyImage(3);
+				new ShortType(3);
 			}
 		} else if (e.getSource() == btnAvr2) {
 			bodyFrame.setVisible(false);
 			if(thin==true) {
 				thin=false;
-				//new BodyImage(0);
+				new AvrType(0);
 			}
 			else if(fat==true) {
 				fat=false;
-				//new BodyImage(1);
+				new AvrType(1);
 			}
 			else if(muscle==true) {
 				muscle=false;
-				//new BodyImage(2);
+				new AvrType(2);
 			}
 			else if(avr==true) {
 				avr=false;
-				//new BodyImage(3);
+				new AvrType(3);
 			}
 		}
 	}
