@@ -227,7 +227,7 @@ public class LongType extends JPanel implements ActionListener {
 	public void Render()
 	{
 		  
-		ImageIcon img = new ImageIcon("./src//Photos//body//"+ list[0].getName());
+		ImageIcon img = new ImageIcon("./src//Photos//body//"+ list[typeNum].getName());
 		
 				lblNewLabel = new JLabel(img);
 				lblNewLabel.setBounds(14, 21, 319, 430);
