@@ -3,6 +3,7 @@ package main;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -23,9 +24,9 @@ public class GangConcept extends JFrame implements ActionListener {
 	
 	JLabel label = new JLabel("강남");
 	
-	JLabel item1 = new JLabel("강남 1");
-	JLabel item2 = new JLabel("강남 2");
-	JLabel item3 = new JLabel("강남 3");
+	JLabel item1 = new JLabel("<html><center>깔맞춤<BR>린넨수트세트</center><html>");
+	JLabel item2 = new JLabel("<html><center>흰티에<BR>네이비슬랙스</center><html>");
+	JLabel item3 = new JLabel("<html><center>데이트하러<BR>나온 오빠</center><html>");
 	
 	JButton btn1;
 	JButton btn2;
@@ -73,19 +74,27 @@ public class GangConcept extends JFrame implements ActionListener {
 		backBtn.setBorderPainted(false);
 		backBtn.setContentAreaFilled(false);
 
+		item1.setForeground(Color.GRAY);
+		item1.setFont(new Font("Rix장미의유혹Basic Regular", Font.PLAIN, 20));
 		item1.setHorizontalAlignment(SwingConstants.CENTER);
-		item1.setBounds(200, 120, 100, 100);
+		item1.setBounds(177, 120, 153, 100);
 		panel.add(item1);
 
+		item2.setForeground(Color.GRAY);
+		item2.setFont(new Font("Rix장미의유혹Basic Regular", Font.PLAIN, 20));
 		item2.setHorizontalAlignment(SwingConstants.CENTER);
-		item2.setBounds(200, 290, 100, 100);
+		item2.setBounds(177, 290, 153, 100);
 		panel.add(item2);
 
+		
+		item3.setForeground(Color.GRAY);
+		item3.setFont(new Font("Rix장미의유혹Basic Regular", Font.PLAIN, 20));
 		item3.setHorizontalAlignment(SwingConstants.CENTER);
-		item3.setBounds(200, 460, 100, 100);
+		item3.setBounds(177, 460, 153, 100);
 		panel.add(item3);
 		
 		
+		label.setFont(new Font("Rix장미의유혹Basic Regular", Font.PLAIN, 30));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setBounds(60, 50, 215, 32);
 		panel.add(label);

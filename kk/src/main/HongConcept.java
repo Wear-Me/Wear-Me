@@ -3,6 +3,7 @@ package main;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -23,9 +24,9 @@ public class HongConcept extends JFrame implements ActionListener {
 	
 	JLabel label = new JLabel("홍대");
 	
-	JLabel item1 = new JLabel("홍대 1");
-	JLabel item2 = new JLabel("홍대 2");
-	JLabel item3 = new JLabel("홍대 3");
+	JLabel item1 = new JLabel("<html><center>올블랙에<BR>포인트프린팅</conter><html>");
+	JLabel item2 = new JLabel("<html><center>디스트로이드진과<BR>기하학패턴반팔티</conter><html>");
+	JLabel item3 = new JLabel("<html><center>바캉스로<BR>홍대나들이</conter><html>");
 	
 	JButton btn1;
 	JButton btn2;
@@ -72,20 +73,29 @@ public class HongConcept extends JFrame implements ActionListener {
 		backBtn.setBorderPainted(false);
 		backBtn.setContentAreaFilled(false);
 
-
+		item1.setForeground(Color.GRAY);
+		item1.setFont(new Font("Rix장미의유혹Basic Regular", Font.PLAIN, 20));
 		item1.setHorizontalAlignment(SwingConstants.CENTER);
-		item1.setBounds(200, 120, 100, 100);
+		item1.setBounds(155, 120, 175, 100);
 		panel.add(item1);
 
+		
+		item2.setForeground(Color.GRAY);
+		item2.setFont(new Font("Rix장미의유혹Basic Regular", Font.PLAIN, 20));
 		item2.setHorizontalAlignment(SwingConstants.CENTER);
-		item2.setBounds(200, 290, 100, 100);
+		item2.setBounds(155, 290, 175, 100);
 		panel.add(item2);
 
+		
+		item3.setForeground(Color.GRAY);
+		item3.setFont(new Font("Rix장미의유혹Basic Regular", Font.PLAIN, 20));
 		item3.setHorizontalAlignment(SwingConstants.CENTER);
-		item3.setBounds(200, 460, 100, 100);
+		item3.setBounds(155, 460, 175, 100);
 		panel.add(item3);
 		
 		
+		label.setFont(new Font("Rix장미의유혹Basic Regular", Font.PLAIN, 30));
+		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setBounds(60, 50, 215, 32);
 		panel.add(label);

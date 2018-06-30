@@ -3,6 +3,7 @@ package main;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -23,9 +24,9 @@ public class HackConcept extends JFrame implements ActionListener {
 	
 	JLabel label = new JLabel("해커톤");
 	
-	JLabel item1 = new JLabel("해커톤 1");
-	JLabel item2 = new JLabel("해커톤 2");
-	JLabel item3 = new JLabel("해커톤 3");
+	JLabel item1 = new JLabel("<html><center>해커톤<BR>시작날은<BR>깔끔했는데</center><html>");
+	JLabel item2 = new JLabel("<html><center>하지만<BR>후줄근은안되지</center><html>");
+	JLabel item3 = new JLabel("<html><center>밤샐준비 끝</center><html>");
 	
 	JButton btn1;
 	JButton btn2;
@@ -73,19 +74,25 @@ public class HackConcept extends JFrame implements ActionListener {
 		backBtn.setBorderPainted(false);
 		backBtn.setContentAreaFilled(false);
 
+		item1.setForeground(Color.GRAY);
+		item1.setFont(new Font("Rix장미의유혹Basic Regular", Font.PLAIN, 20));
 		item1.setHorizontalAlignment(SwingConstants.CENTER);
-		item1.setBounds(200, 120, 100, 100);
+		item1.setBounds(184, 120, 146, 100);
 		panel.add(item1);
 
+		item2.setForeground(Color.GRAY);
+		item2.setFont(new Font("Rix장미의유혹Basic Regular", Font.PLAIN, 20));
 		item2.setHorizontalAlignment(SwingConstants.CENTER);
-		item2.setBounds(200, 290, 100, 100);
+		item2.setBounds(184, 290, 146, 100);
 		panel.add(item2);
 
+		item3.setForeground(Color.GRAY);
+		item3.setFont(new Font("Rix장미의유혹Basic Regular", Font.PLAIN, 20));
 		item3.setHorizontalAlignment(SwingConstants.CENTER);
-		item3.setBounds(200, 460, 100, 100);
+		item3.setBounds(184, 460, 146, 100);
 		panel.add(item3);
 		
-		
+		label.setFont(new Font("Rix장미의유혹Basic Regular", Font.PLAIN, 30));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setBounds(60, 50, 215, 32);
 		panel.add(label);
