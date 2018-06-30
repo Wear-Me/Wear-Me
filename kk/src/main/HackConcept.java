@@ -108,12 +108,15 @@ public class HackConcept extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO 자동 생성된 메소드 스텁
 		if (e.getSource() == btn1) {
+			ConceptSelection.str +="5";
 			frame.setVisible(false);
 			new BodyType();
 		} else if (e.getSource() == btn2) {
+			ConceptSelection.str +="6";
 			frame.setVisible(false);
 			new BodyType();
 		} else if (e.getSource() == btn3) {
+			ConceptSelection.str +="7";
 			frame.setVisible(false);
 			new BodyType();
 		} else if (e.getSource() == backBtn) {

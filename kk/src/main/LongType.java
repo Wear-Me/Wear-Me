@@ -37,7 +37,11 @@ public class LongType extends JPanel implements ActionListener {
 	Size m_Size = new Size();
 	int typeNum;
 	File[] list;
+	File[] list2;
+	File path2;
+	int count = -1;
 	File path;
+	JLabel lblNewLabel_1;
 
 
 	public LongType(int type) {
@@ -86,17 +90,20 @@ public class LongType extends JPanel implements ActionListener {
 		downBtn.addActionListener(this);
 		outBtn.addActionListener(this);
 		otherBtn.addActionListener(this);
-	
+		m_Size.large.addActionListener(this);
+		m_Size.medium.addActionListener(this);
+		m_Size.xLarge2.addActionListener(this);
+		m_Size.large2.addActionListener(this);
+		m_Size.medium2.addActionListener(this);
+		m_Size.xLarge2.addActionListener(this);
+
 		//몸체 이미지 출력
 		
 		Render();
-		longFrame.getContentPane().add(lblNewLabel);
-	
+		
 		longFrame.setVisible(true);	
 		
-		
-		
-	}
+		}
 
 	@Override
 	protected void paintComponent(Graphics g) {
@@ -124,47 +131,139 @@ public class LongType extends JPanel implements ActionListener {
 		}
 		if(e.getSource()== upBtn)
 		{
+			
 			longFrame.getContentPane().add(m_Size.xLarge);
+		
 			longFrame.getContentPane().add(m_Size.medium);
+	
 			longFrame.getContentPane().add(m_Size.large);
+			
 			longFrame.getContentPane().add(m_Size.other);
-			longFrame.setVisible(true);
+			
 		}
+		if(e.getSource()== m_Size.xLarge)
+		{
+			count=1;
+			SelectCloth();
+	
+		}
+		if(e.getSource()== m_Size.medium)
+		{
+			count=3;
+			SelectCloth();
+			
+			
+		}
+		if(e.getSource()== m_Size.large)
+		{
+			count=5;
+			SelectCloth();			
+		}
+		
 		if(e.getSource()== downBtn)
 		{
 			
-			m_Size.xLarge.setVisible(true);
-			m_Size.medium2.setVisible(true);
-			m_Size.large2.setVisible(true);
-			m_Size.other2.setVisible(true);
 			longFrame.getContentPane().add(m_Size.xLarge2);
 			longFrame.getContentPane().add(m_Size.medium2);
 			longFrame.getContentPane().add(m_Size.large2);
 			longFrame.getContentPane().add(m_Size.other2);
-			longFrame.setVisible(true);
+		}
+		
+		if(e.getSource()== m_Size.xLarge2)
+		{
+			count=0;
+			SelectCloth();
 			
 		}
+		if(e.getSource()== m_Size.medium2)
+		{
+			count=2;
+			SelectCloth();
+			
+		}
+		if(e.getSource()== m_Size.large2)
+		{
+			count=4;
+			SelectCloth();
+			
+		}
+		
 		if(e.getSource()== outBtn)
 		{
+			
 			longFrame.getContentPane().add(m_Size.medium3);
 			longFrame.getContentPane().add(m_Size.large3);
 			longFrame.getContentPane().add(m_Size.xLarge3);
 			longFrame.getContentPane().add(m_Size.other3);
 			longFrame.setVisible(true);
 		}
+		if(e.getSource()== m_Size.xLarge3)
+		{
+			
+			
+		}
+		if(e.getSource()== m_Size.medium3)
+		{
+			
+			
+		}
+		if(e.getSource()== m_Size.large3)
+		{
+			
+			
+		}
+		
 		
 	}
 	void ImageSave()
 	{
-		path = new File("./image//Style//");//경로 설정 필요
+		path = new File("./src//Photos//body//");//경로 설정 필요
+		path2 = new File("./src//Photos//옷//");
 		list = path.listFiles();
+		list2 = path2.listFiles();
+		
+		
 	}
 	public void Render()
 	{
-		ImageIcon img = new ImageIcon("./image//Style//"+ list[21].getName());
-
-		lblNewLabel = new JLabel(img);
-		lblNewLabel.setBounds(14, 21, 319, 394);
+		  
+		ImageIcon img = new ImageIcon("./src//Photos//body//"+ list[0].getName());
+		
+				lblNewLabel = new JLabel(img);
+				lblNewLabel.setBounds(14, 21, 319, 430);
+				longFrame.getContentPane().add(lblNewLabel);
 	}
-	
+	void SelectCloth()
+	{
+
+		
+		int n =0;
+		int y =380;
+		if(count>=0) {
+			ImageIcon img = new ImageIcon("./src//Photos//옷//"+ list2[count].getName());
+			
+			if(list2[count].getName().contains("-"))
+			{
+				n = 20;
+				y = 500;
+			}
+			else
+			{
+				n = 0;
+				y = 350;
+			}
+		
+		lblNewLabel_1= new JLabel(img);
+		lblNewLabel_1.setBounds(14, n, 319,y);
+
+		longFrame.getLayeredPane().add(lblNewLabel_1);
+		count = -1;
+		
+		longFrame.invalidate();
+		longFrame.pack();
+		longFrame.setBounds(100, 100, 400, 625);
+		}
+	}
+		
 }
+
