@@ -108,12 +108,15 @@ public class GangConcept extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO 자동 생성된 메소드 스텁
 		if (e.getSource() == btn1) {
+			ConceptSelection.str +="14";
 			frame.setVisible(false);
 			new BodyType();
 		} else if (e.getSource() == btn2) {
+			ConceptSelection.str +="13";
 			frame.setVisible(false);
 			new BodyType();
 		} else if (e.getSource() == btn3) {
+			ConceptSelection.str +="12";
 			frame.setVisible(false);
 			new BodyType();
 		} else if (e.getSource() == backBtn) {

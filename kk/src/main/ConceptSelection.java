@@ -24,6 +24,9 @@ public class ConceptSelection extends JFrame implements ActionListener {
 	JButton btnInterv = new JButton("");
 	JButton backBtn = new JButton("");
 	JLabel label = new JLabel("원하는 스타일을 선택해봐");
+	static String str = "";
+
+	
 
 	public ConceptSelection() {
 		conceptFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -105,21 +108,27 @@ public class ConceptSelection extends JFrame implements ActionListener {
 		// TODO 자동 생성된 메소드 스텁
 		if (e.getSource() == btnAll) {
 			conceptFrame.setVisible(false);
+			str="all";
 			new AllConcept();
 		} else if (e.getSource() == btnDate) {
 			conceptFrame.setVisible(false);
+			str="date";
 			new DateConcept();
 		} else if (e.getSource() == btnHongik) {
 			conceptFrame.setVisible(false);
+			str="hong";
 			new HongConcept();
 		} else if (e.getSource() == btnGangnam) {
 			conceptFrame.setVisible(false);
+			str="gang";
 			new GangConcept();
 		} else if (e.getSource() == btnHack) {
 			conceptFrame.setVisible(false);
+			str="hack";
 			new HackConcept();
 		} else if (e.getSource() == btnInterv) {
 			conceptFrame.setVisible(false);
+			str="inter";
 			new InterConcept();
 		} else if (e.getSource() == backBtn) {
 			conceptFrame.setVisible(false);
