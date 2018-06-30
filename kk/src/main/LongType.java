@@ -24,10 +24,10 @@ public class LongType extends JPanel implements ActionListener {
 
 	
 	
-	JButton upBtn = new JButton("상의");
-	JButton downBtn = new JButton("하의");
-	JButton outBtn = new JButton("아우터");
-	JButton otherBtn = new JButton("배경");
+	JButton upBtn = new JButton("");
+	JButton downBtn = new JButton("");
+	JButton outBtn = new JButton("");
+	JButton otherBtn = new JButton("");
 	JButton backBtn = new JButton();
 	Image fatImage = new ImageIcon("./src/image/cloud.jpg").getImage();
 	Image thinImage = new ImageIcon("./src/image/cloud.jpg").getImage();
@@ -56,28 +56,39 @@ public class LongType extends JPanel implements ActionListener {
 
 		longPanel.setBackground(Color.WHITE);
 		longPanel.setLayout(null);
+		
+		
+		upBtn.setIcon(new ImageIcon(LongType.class.getResource("/Photos/up.jpg")));
 		/////////////////////
 		upBtn.setBounds(20, 510, 70, 70);
 		
 		upBtn.setBorderPainted(false);
 		upBtn.setContentAreaFilled(false);
 
+		
+		downBtn.setIcon(new ImageIcon(LongType.class.getResource("/Photos/pant.jpg")));
 		downBtn.setBounds(100, 510, 70, 70);
 		
 		downBtn.setBorderPainted(false);
 		downBtn.setContentAreaFilled(false);
 
+		outBtn.setIcon(new ImageIcon(LongType.class.getResource("/Photos/out.jpg")));
 		outBtn.setBounds(180, 510, 70, 70);
 		
 		outBtn.setBorderPainted(false);
 		outBtn.setContentAreaFilled(false);
 
+		
+		otherBtn.setIcon(new ImageIcon(LongType.class.getResource("/Photos/backG.jpg")));
 		otherBtn.setBounds(260, 510, 70, 70);
 		otherBtn.setBorderPainted(false);
 		otherBtn.setContentAreaFilled(false);
 
 		
+		backBtn.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/Back.png")));
 		backBtn.setBounds(30, 50, 20, 40);
+		backBtn.setBorderPainted(false);
+		backBtn.setContentAreaFilled(false);
 		backBtn.addActionListener(this);
 		
 		
@@ -85,6 +96,7 @@ public class LongType extends JPanel implements ActionListener {
 		longFrame.getContentPane().add(outBtn);
 		longFrame.getContentPane().add(upBtn);
 		longFrame.getContentPane().add(downBtn);
+		longPanel.add(backBtn);
 		
 		upBtn.addActionListener(this);
 		downBtn.addActionListener(this);
@@ -100,7 +112,7 @@ public class LongType extends JPanel implements ActionListener {
 		//몸체 이미지 출력
 		
 		Render();
-		
+
 		longFrame.setVisible(true);	
 		
 		}

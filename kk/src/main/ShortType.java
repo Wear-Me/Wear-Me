@@ -15,10 +15,10 @@ public class ShortType extends JPanel implements ActionListener {
 	JFrame longFrame = new JFrame();
 	JPanel longPanel = new JPanel();
 
-	JButton upBtn = new JButton("상의");
-	JButton downBtn = new JButton("하의");
-	JButton outBtn = new JButton("아우터");
-	JButton otherBtn = new JButton("다른 옷 추가");
+	JButton upBtn = new JButton("");
+	JButton downBtn = new JButton("");
+	JButton outBtn = new JButton("");
+	JButton otherBtn = new JButton("");
 	JButton backBtn = new JButton();
 	Image fatImage = new ImageIcon("./src/image/cloud.jpg").getImage();
 	Image thinImage = new ImageIcon("./src/image/cloud.jpg").getImage();
@@ -35,21 +35,25 @@ public class ShortType extends JPanel implements ActionListener {
 		longPanel.setBackground(Color.WHITE);
 		longPanel.setLayout(null);
 
+		upBtn.setIcon(new ImageIcon(LongType.class.getResource("/Photos/up.jpg")));
 		upBtn.setBounds(20, 510, 70, 70);
 		longPanel.add(upBtn);
 		upBtn.setBorderPainted(false);
 		upBtn.setContentAreaFilled(false);
 
+		downBtn.setIcon(new ImageIcon(LongType.class.getResource("/Photos/pant.jpg")));
 		downBtn.setBounds(100, 510, 70, 70);
 		longPanel.add(downBtn);
 		downBtn.setBorderPainted(false);
 		downBtn.setContentAreaFilled(false);
 
+		outBtn.setIcon(new ImageIcon(LongType.class.getResource("/Photos/out.jpg")));
 		outBtn.setBounds(180, 510, 70, 70);
 		longPanel.add(outBtn);
 		outBtn.setBorderPainted(false);
 		outBtn.setContentAreaFilled(false);
 
+		otherBtn.setIcon(new ImageIcon(LongType.class.getResource("/Photos/backG.jpg")));
 		otherBtn.setBounds(260, 510, 70, 70);
 		longPanel.add(otherBtn);
 		otherBtn.setBorderPainted(false);
@@ -60,7 +64,10 @@ public class ShortType extends JPanel implements ActionListener {
 		outBtn.addActionListener(this);
 		otherBtn.addActionListener(this);
 
+		backBtn.setIcon(new ImageIcon(SeasonSelection.class.getResource("/Photos/Back.png")));
 		backBtn.setBounds(30, 50, 20, 40);
+		backBtn.setBorderPainted(false);
+		backBtn.setContentAreaFilled(false);
 		backBtn.addActionListener(this);
 		longPanel.add(backBtn);
 
